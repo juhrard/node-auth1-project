@@ -6,7 +6,7 @@ const usersRouter = require("./users-router.js");
 const restricted = require("../middleware/restricted-middleware.js");
 
 router.use("/auth", authRouter);
-router.use("/users", restricted, usersRouter);
+router.use("/restricted/users", restricted, usersRouter);
 
 router.get("/hash", (req, res) => {
   const authentication = req.headers.authentication;
